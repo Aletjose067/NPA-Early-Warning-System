@@ -1,0 +1,45 @@
+body {
+    background-image: url("../images/image.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+}
+
+@keyframes pulseRed {
+    0% { background-color: rgba(255,0,0,0.05); }
+    50% { background-color: rgba(255,0,0,0.25); }
+    100% { background-color: rgba(255,0,0,0.05); }
+}
+
+@keyframes pulseGreen {
+    0% { background-color: rgba(0,255,0,0.05); }
+    50% { background-color: rgba(0,255,0,0.25); }
+    100% { background-color: rgba(0,255,0,0.05); }
+}
+
+@keyframes pulseYellow {
+    0% { background-color: rgba(255,255,0,0.05); }
+    50% { background-color: rgba(255,255,0,0.25); }
+    100% { background-color: rgba(255,255,0,0.05); }
+}
+
+.high-risk {
+    animation: pulseRed 1.5s infinite;
+}
+
+.medium-risk {
+    animation: pulseYellow 1.5s infinite;
+}
+
+.low-risk {
+    animation: pulseGreen 1.5s infinite;
+}
+
+.card {
+    max-width: 900px;
+    margin: 50px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 15px;
+}

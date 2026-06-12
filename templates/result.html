@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NPA Early Warning Report</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body class="{{ animation_class }}">
+
+<div class="container py-5">
+
+    <div class="card shadow-lg">
+
+        <h1 class="text-center mb-4">
+            📊 NPA EARLY WARNING REPORT
+        </h1>
+
+        <hr>
+
+        <h4>Customer Information</h4>
+
+        <table class="table table-bordered">
+
+            <tr>
+                <th>Name</th>
+                <td>{{ customer_name }}</td>
+            </tr>
+
+            <tr>
+                <th>Customer ID</th>
+                <td>{{ customer_id }}</td>
+            </tr>
+
+            <tr>
+                <th>Email</th>
+                <td>{{ email }}</td>
+            </tr>
+
+            <tr>
+                <th>Mobile Number</th>
+                <td>{{ mobile }}</td>
+            </tr>
+
+        </table>
+
+        <h4 class="mt-4">Loan Details</h4>
+
+        <table class="table table-bordered">
+
+            <tr>
+                <th>Age</th>
+                <td>{{ age }}</td>
+            </tr>
+
+            <tr>
+                <th>Sanction Limit</th>
+                <td>₹ {{ sanct_lim }}</td>
+            </tr>
+
+            <tr>
+                <th>Overdue Amount</th>
+                <td>₹ {{ overdue_amt }}</td>
+            </tr>
+
+            <tr>
+                <th>Balance Outstanding</th>
+                <td>₹ {{ balance_os }}</td>
+            </tr>
+
+            <tr>
+                <th>Total Transactions</th>
+                <td>{{ total_transactions }}</td>
+            </tr>
+
+            <tr>
+                <th>Total Transaction Amount</th>
+                <td>₹ {{ total_transaction_amount }}</td>
+            </tr>
+
+            <tr>
+                <th>Average Transaction Amount</th>
+                <td>₹ {{ avg_transaction_amount }}</td>
+            </tr>
+
+        </table>
+
+        <hr>
+
+        <h2 class="text-center">
+            Risk Level : {{ risk_level }}
+        </h2>
+
+        <h3 class="text-center">
+            Risk Probability : {{ probability }}%
+        </h3>
+
+        <div class="progress my-4" style="height:35px;">
+
+            <div class="progress-bar"
+                 role="progressbar"
+                 style="width: {{ probability }}%;">
+
+                {{ probability }}%
+
+            </div>
+
+        </div>
+
+        <hr>
+
+        <h4 class="text-center">
+            {{ email_status }}
+        </h4>
+
+        <div class="text-center mt-4">
+
+            <a href="/" class="btn btn-success btn-lg">
+                Analyze Another Customer
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
